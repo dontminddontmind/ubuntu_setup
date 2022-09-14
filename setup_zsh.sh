@@ -12,21 +12,11 @@ else
 fi
 
 #复制配置文件
-cp ./.zshrc ./.p10k.zsh ~/
+cp ./.bashrc ./.zshrc ./.p10k.zsh ~/
 
 # 设置为默认 Shell
 chsh -s /bin/zsh
 
-#安装字体
-sudo apt install fonts-powerline
-wget https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/Meslo/M/Regular/complete/Meslo%20LG%20M%20Regular%20Nerd%20Font%20Complete%20Mono.ttf
-sudo mkdir -p /usr/share/fonts/custom
-sudo mv Meslo\ LG\ M\ Regular\ Nerd\ Font\ Complete\ Mono.ttf /usr/share/fonts/custom
-sudo chmod 744 /usr/share/fonts/custom/Meslo\ LG\ M\ Regular\ Nerd\ Font\ Complete\ Mono.ttf 
-cd /usr/share/fonts/custom/
-sudo mkfontscale
-sudo mkfontdir
-sudo fc-cache -fv
 
 #安装powerlevel10k主题
 git clone https://hub.fastgit.org/romkatv/powerlevel10k.git ~/.oh-my-zsh/custom/themes/powerlevel10k

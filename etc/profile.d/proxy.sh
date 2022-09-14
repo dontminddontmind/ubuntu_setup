@@ -1,5 +1,9 @@
 # add for proxy
 export hostip=$(ip route | grep default | awk '{print $3}')
+if [[ -z $hostip ]];then
+  echo "network error"
+  exit 0
+fi
 if test -z $(uname -a|grep wsl);then
 	hostip=${hostip%.*}".1"
 fi
