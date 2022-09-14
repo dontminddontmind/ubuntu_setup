@@ -115,6 +115,7 @@ source $ZSH/oh-my-zsh.sh
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 source /etc/profile.d/proxy.sh
+source /etc/profile.d/virtualenvwrapper.sh 
 easyproxy
 export PATH=$HOME/.local/bin:$PATH
 
@@ -122,4 +123,4 @@ alias vim='nvim'
 alias sudovim='sudo -E nvim'
 alias sudonvim='sudo -E nvim'
 # ctf-tools: PATH setup
-export PATH=/home/ubt20/tools/ctf-tools/bin:$PATH
+export PATH=/home/ubt22/tools/ctf-tools/bin:$PATH
