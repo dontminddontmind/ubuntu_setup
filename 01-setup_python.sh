@@ -30,5 +30,6 @@ pip3 install pysocks
 proxy
 
 #virtualenvwrapper
+pip install virtualenv
 pip install virtualenvwrapper
 sudo cp ./etc/profile.d/virtualenvwrapper.sh /etc/profile.d/virtualenvwrapper.sh

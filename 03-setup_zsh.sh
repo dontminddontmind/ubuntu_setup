@@ -11,11 +11,10 @@ else
 	exit 0
 fi
 
-#复制配置文件
-cp ./.bashrc ./.zshrc ./.p10k.zsh ~/
 
 # 设置为默认 Shell
 chsh -s /bin/zsh
+sudo chsh -s /bin/zsh root
 
 
 #安装powerlevel10k主题

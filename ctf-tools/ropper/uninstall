@@ -1,0 +1,4 @@
+#!/bin/bash -ex
+
+ctf-tools-pip uninstall -y ropper || true
+ctf-tools-pip3 uninstall -y ropper || true

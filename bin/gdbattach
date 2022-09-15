@@ -1,0 +1,9 @@
+#!/bin/zsh
+processname="main"
+if [[ $1 -eq ""]];then
+  processname=$1
+fi
+if [[ -f "./init.gdb"]];then
+  touch init.gdb
+fi
+gdb-pwndbg attach $(pidof ${processname}) -x init.gdb

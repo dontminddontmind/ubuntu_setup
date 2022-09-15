@@ -19,3 +19,10 @@ cd ~/tools/getnf
 
 getnf
 echo 'Edit->Preferences-> Unnamed-> Text -> Check Custom font'
+
+#caps转esc，字体大小
+sudo add-apt-repository universe
+sudo apt install gnome-tweaks
+gnome-tweaks
+echo "在“Keyboard & Mouse”设置中，点击“Additional Layout Options”；在“Caps Lock behavior”列表中选择“Caps Lock an additionnal Esc”。"
+

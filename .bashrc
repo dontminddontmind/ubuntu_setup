@@ -115,15 +115,14 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-# ctf-tools: PATH setup
-export PATH=/home/ubt22/tools/ctf-tools/bin:$PATH
 
 source /etc/profile.d/proxy.sh
 source /etc/profile.d/virtualenvwrapper.sh 
 easyproxy
 export PATH=$HOME/.local/bin:$PATH
 
-alias vim='nvim'
-alias sudovim='sudo -E nvim'
-alias sudonvim='sudo -E nvim'
+alias vim='lvim'
+# alias sudovim='sudo -E lvim'
 
+# ctf-tools: PATH setup
+export PATH=/home/ubt22/tools/ctf-tools/bin:$PATH

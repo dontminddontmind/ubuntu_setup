@@ -29,3 +29,7 @@ if test ! -z $(uname -a|grep wsl);then
 	sudo rm /etc/resolv.conf
 	echo "nameserver 8.8.8.8" >> /etc/resolv.conf
 fi
+
+sudo apt-get curl
+sources "/etc/profile.d/proxy.sh"
+proxy

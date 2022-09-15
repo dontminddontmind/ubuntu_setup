@@ -1,0 +1,14 @@
+#!/bin/bash -ex
+
+[ -e ropper ] || git clone --depth 1 https://github.com/sashs/Ropper.git ropper
+
+# ctf-tools-pip3 install --no-binary -I capstone
+ctf-tools-pip3 install capstone
+ctf-tools-pip3 install filebytes
+ctf-tools-pip3 install keystone-engine
+ctf-tools-pip3 install -e ropper
+ctf-tools-pip install capstone
+ctf-tools-pip install filebytes
+ctf-tools-pip install keystone-engine
+ctf-tools-pip install -e ropper
+

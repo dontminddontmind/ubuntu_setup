@@ -1,6 +1,6 @@
 #!/bin/bash
 #set -x
-glibcall_path="/home/ubt20/tools/glibc-all-in-one"
+glibcall_path="$HOME/tools/glibc-all-in-one"
 
 if [[ $# -eq 1 && $1 = '-l' ]]
 then
