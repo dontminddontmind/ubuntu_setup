@@ -21,16 +21,17 @@ else
   cd ~/tools/getnf
   ./install.sh
 
-  echo ""
-  echo 'Edit->Preferences-> Unnamed-> Text -> Check Custom font'
+  echo "可以运行getnf安装想要的字体"
+  echo "字体安装完后，在terminal里右键preference里切换字体"
+  echo 'Preferences-> Unnamed-> Text -> Check Custom font'
 
   #caps转esc，字体大小
   echo "安装gnome-tweaks工具，可以调整字体大小，映射caps到esc键"
   sudo add-apt-repository universe
   sudo apt install gnome-tweaks
-  echo "caps -> esc :"
+  echo "将capslock映射到esc :"
   echo "在“Keyboard & Mouse”设置中，点击“Additional Layout Options”；在“Caps Lock behavior”列表中选择“Caps Lock an additionnal Esc”。"
-  echo "font size :"
+  echo "更改字体大小:"
   echo "Fonts -> Scaling Factor"
   gnome-tweaks
 

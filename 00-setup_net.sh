@@ -6,6 +6,7 @@ sudo cp ./etc/profile.d/proxy.sh /etc/profile.d/
 ubtver=$(lsb_release -a | grep Codename | awk '{print $2}')
 
 sudo mv /etc/apt/sources.list /etc/apt/sources.list.bak
+# sudo touch /etc/apt/sources.list
 if [ "${ubtver}" == "jammy" ]
 then
 sudo cp ./etc/apt/sources.list.d/ubt22* /etc/apt/sources.list.d/
@@ -31,6 +32,6 @@ if test ! -z $(uname -a|grep wsl);then
 	echo "nameserver 8.8.8.8" >> /etc/resolv.conf
 fi
 
-sudo apt-get curl
-sources "/etc/profile.d/proxy.sh"
+sudo apt install curl 
+source "/etc/profile.d/proxy.sh"
 proxy

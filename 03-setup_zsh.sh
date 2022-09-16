@@ -15,7 +15,7 @@ fi
 # 设置为默认 Shell
 chsh -s /bin/zsh
 sudo chsh -s /bin/zsh root
-
+echo '输入exit继续安装'
 
 #安装powerlevel10k主题
 #git clone https://hub.fastgit.org/romkatv/powerlevel10k.git ~/.oh-my-zsh/custom/themes/powerlevel10k
