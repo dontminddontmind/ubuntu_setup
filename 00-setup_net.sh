@@ -33,5 +33,5 @@ if test ! -z $(uname -a|grep wsl);then
 fi
 
 sudo apt install curl 
-source "/etc/profile.d/proxy.sh"
+source /etc/profile.d/proxy.sh
 proxy
