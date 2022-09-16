@@ -19,7 +19,7 @@ cp ./bin/* ~/.local/bin/
 
 #root
 #TEST
-if sudo [ -L /root/.zshrc ] 
+if sudo [ -e /root/.zshrc ] 
 then
   echo "root link exist"
 else
