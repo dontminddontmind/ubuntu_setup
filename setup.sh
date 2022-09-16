@@ -14,5 +14,17 @@ echo "安装lvim..."
 echo "安装ctf工具..."
 ./05-setup_ctf.sh
 
+chmod 777 ./bin/*
 cp ./bin/* ~/.local/bin/
 
+#root
+#TEST
+if sudo [ -L /root/.zshrc ] 
+then
+  echo "root link exist"
+else
+  sudo ln -s /home/$USER/.zshrc        /root/.zshrc
+  sudo ln -s /home/$USER/.oh-my-zsh    /root/.oh-my-zsh
+  # sudo ln -s /home/$USER/.bashrc        /root/.bashrc
+  sudo ln -s /home/$USER/.p10k.zsh     /root/.p10k.zsh
+fi

@@ -1,9 +1,23 @@
-#!/bin/zsh
+#!/bin/bash
 processname="main"
-if [[ $1 -eq ""]];then
+if [ $# -eq 1 ];then
   processname=$1
 fi
-if [[ -f "./init.gdb"]];then
+if [[ ! -f "./init.gdb" ]];then
   touch init.gdb
+   arch=$(checksec ./x64.test 2>&1 |grep Arch|awk '{print $2}'|awk -F- '{print $1}')
+ endian=$(checksec ./x64.test 2>&1 |grep Arch|awk '{print $2}'|awk -F- '{print $3}')
+  echo "set architecture ${arch}" >> init.gdb
+  echo "set endian ${endian}" >> init.gdb
+  if [ test -z $(file ${processname} | grep intel) ];then
+      if [ test ! -z $(find . -name *.so)];then
+        echo "set solib-search-path ./" >> init.gdb
+      fi
+      echo "target remote :1234" >> init.gdb
+  fi
 fi
-gdb-pwndbg attach $(pidof ${processname}) -x init.gdb
+if [ test -z $(file ${processname} | grep intel) ];then
+ gdb-multiarch -f ./${processname} -q -ex init-pwndbg -x init.gdb
+else
+  gdb-pwndbg attach $(pidof ${processname}) -x init.gdb
+fi

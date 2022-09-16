@@ -24,6 +24,7 @@ sudo apt-get update
 sudo apt-get upgrade
 
 #wsl
+#TEST
 if test ! -z $(uname -a|grep wsl);then
 	echo "[network]\ngenerateResolvConf = false" > /etc/wsl.conf
 	sudo rm /etc/resolv.conf
