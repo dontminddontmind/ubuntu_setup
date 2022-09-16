@@ -24,6 +24,13 @@ else
 	echo "dir exist"
 fi
 
+if sudo [ -L "/root/.zshrc" ] 
+then
+  echo "link exist"
+else
+  echo "link null"
+fi
+
 if [ -L "./lnk.test" ] 
 then
   echo "link exist"
