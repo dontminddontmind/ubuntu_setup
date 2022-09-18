@@ -27,9 +27,18 @@ sudo apt-get upgrade
 #wsl
 #TEST
 if test ! -z $(uname -a|grep wsl);then
-	echo "[network]\ngenerateResolvConf = false" > /etc/wsl.conf
+	#sudo echo权限不够
+	#https://www.shellhacks.com/sudo-echo-to-file-permission-denied/
+	if sudo [ ! -f /etc/wsl.conf ]
+	then
+		sudo touch /etc/wsl.conf
+	fi
+	if test -z $(cat /etc/wsl.conf|grep 'generateResolvConf = false');then
+		echo '[network]' | sudo tee --append /etc/wsl.conf
+		echo 'generateResolvConf = false' | sudo tee --append /etc/wsl.conf
+	fi
 	sudo rm /etc/resolv.conf
-	echo "nameserver 8.8.8.8" >> /etc/resolv.conf
+	sudo echo 'nameserver 8.8.8.8' | sudo tee /etc/resolv.conf
 fi
 
 sudo apt install curl 
