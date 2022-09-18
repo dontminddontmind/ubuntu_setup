@@ -8,6 +8,5 @@ sed -i '/ctf-tools/d'   .zshrc
 echo "# ctf-tools: PATH setup" >>.zshrc
 echo "export PATH=/home/${USER}/tools/ctf-tools/bin:\$PATH" >>.zshrc
 cp ./.bashrc ./.zshrc ./.p10k.zsh ~/
-cp -r ./.config ~/
 
 		

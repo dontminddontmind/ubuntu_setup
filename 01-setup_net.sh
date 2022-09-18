@@ -33,5 +33,7 @@ if test ! -z $(uname -a|grep wsl);then
 fi
 
 sudo apt install curl 
-source /etc/profile.d/proxy.sh
-proxy
+# shell不能识别alias https://blog.csdn.net/qq_33709508/article/details/101822329
+# source /etc/profile.d/proxy.sh
+# proxy
+echo '请重启让网络配置生效'

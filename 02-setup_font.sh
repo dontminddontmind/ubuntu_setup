@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if test ! -z $(uname -a|grep wsl);then
-  echo "wsl"
+  echo "wsl不用装"
 else
 
   #安装字体
@@ -23,7 +23,7 @@ else
 
   echo "可以运行getnf安装想要的字体"
   echo "字体安装完后，在terminal里右键preference里切换字体"
-  echo 'Preferences-> Unnamed-> Text -> Check Custom font'
+  echo 'Preferences-> Unnamed-> Text -> Check Custom font -> 换成Meslo'
 
   #caps转esc，字体大小
   echo "安装gnome-tweaks工具，可以调整字体大小，映射caps到esc键"

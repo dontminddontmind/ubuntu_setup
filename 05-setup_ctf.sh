@@ -94,4 +94,3 @@ sudo apt-get install binutils-mipsel-linux-gnu  binutils-mips-linux-gnu binutils
 sudo apt-get install  gcc-arm-linux-gnueabi gcc-mips-linux-gnu
 
 
-
