@@ -16,8 +16,10 @@
     ./03-setup_python.sh #安装python2和python3环境，用update-alternatives切换版本
     #关闭terminal再打开，初始化virtualenv环境
     ./04-setup_zsh.sh #配置ohmyzsh，重启生效
-    /bin/cp -r ./.config/lvim ~/.config/ #复制我的lvim配置
     ./04-setup_lvim.sh #配置lunarvim，全部yes
+    #复制我的lvim配置
+    cp ./.config/lvim/* ~/.config/lvim/
+    #lvim 进入后按<spave>+p+u跟新一下包
     ./05-setup_ctf.sh #配置pwn工具
     #复制我写的一些pwn脚本到bin里
     chmod 777 ./bin/*
@@ -31,8 +33,8 @@
     sudo systemctl restart NetworkManager
 ```
 * curl: (35) OpenSSL SSL_connect: 连接被对方重设 in connection to raw.githubusercontent.com:443
-curl无法下载lunarvim的install.sh文件，连接被重置，开了代理也没用，可以更改hosts解决
-在 www.ipaddress.com 查询 raw.githubusercontent.com 的真实地址，写入/etc/hosts
+curl无法下载lunarvim的install.sh文件，连接被重置，开了代理也没用，可以更改hosts解决。
+在 www.ipaddress.com 查询 raw.githubusercontent.com 的真实地址，写入/etc/hosts。
 ```
     185.199.108.133     raw.githubusercontent.com
 ```
