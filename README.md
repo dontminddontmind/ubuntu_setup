@@ -10,6 +10,7 @@
     ./01-setup_net.sh #配置网络，apt镜像源，代理
     #重启以让网络配置生效
     reboot
+    proxy #开启代理 unproxy关闭
     ./02-setup_font.sh #安装zsh和lvim会用到的字体，wsl不用安
     ./03-setup_python.sh #安装python2和python3环境，用update-alternatives切换版本
     ./04-setup_zsh.sh #配置ohmyzsh
