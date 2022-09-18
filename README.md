@@ -16,7 +16,7 @@
     ./03-setup_python.sh #安装python2和python3环境，用update-alternatives切换版本
     #关闭terminal再打开，初始化virtualenv环境
     ./04-setup_zsh.sh #配置ohmyzsh，重启生效
-    cp -r ./.config/lvim ~/.config/ #复制我的lvim配置
+    /bin/cp -r ./.config/lvim ~/.config/ #复制我的lvim配置
     ./04-setup_lvim.sh #配置lunarvim，全部yes
     ./05-setup_ctf.sh #配置pwn工具
     #复制我写的一些pwn脚本到bin里
