@@ -4,7 +4,7 @@ if [[ -z $hostip ]];then
   echo "network error"
   exit 0
 fi
-if test -z "$(uname -a|grep wsl)" ;then
+if test -z "$(uname -a|grep WSL)" ;then
 	hostip=${hostip%.*}".1"
 fi
 if [ ! -f "/etc/apt/apt.conf.d/proxy.conf" ]; then
