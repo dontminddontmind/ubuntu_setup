@@ -24,6 +24,8 @@ sudo update-alternatives  --install /usr/local/bin/pip pip /usr/bin/pip3 2
 #切换Python版本
 #sudo update-alternatives --config python
 
+# shell不能识别alias https://blog.csdn.net/qq_33709508/article/details/101822329
+shopt -s opt_name # Enable (set) opt_name.
 unproxy
 pip2 install pysocks
 pip3 install pysocks

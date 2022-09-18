@@ -23,4 +23,6 @@
     ./06-setup_root_zsh.sh #让root也用上zsh（慎用，很多地址没有改成root的）
 
 
+## 宿主机配置
+### wsl宿主机
 
