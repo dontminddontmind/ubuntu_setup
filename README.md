@@ -14,7 +14,7 @@
     proxy #开启代理 unproxy关闭
     ./02-setup_font.sh #安装zsh和lvim会用到的字体，wsl不用安
     ./03-setup_python.sh #安装python2和python3环境，用update-alternatives切换版本
-    #关闭terminal再打开，创建virtualenv环境
+    #关闭terminal再打开，初始化virtualenv环境
     ./04-setup_zsh.sh #配置ohmyzsh
     cp -r ./.config/lvim ~/.config/ #复制我的lvim配置
     ./04-setup_lvim.sh #配置lunnarvim
