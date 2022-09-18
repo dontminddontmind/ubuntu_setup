@@ -22,6 +22,10 @@
     cp ./bin/* ~/.local/bin/
     ./06-setup_root_zsh.sh #让root也用上zsh（慎用，很多地址没有改成root的）
 
+## 一些问题
+* vmware的ubuntu网络有错误
+    #试试重启一下
+    sudo systemctl restart NetworkManager
 
 ## 宿主机配置
 ### wsl宿主机
