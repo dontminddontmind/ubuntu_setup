@@ -88,6 +88,29 @@ sudo apt-get install patchelf
 
 #iot libc
 # sudo apt-get install libc6-arm64-cross libc6-armel-cross libc6-armhf-cross libc6-mips-cross libc6-mips32-mips64-cross libc6-mips32-mips64el-cross libc6-mips64-cross libc6-mips64-mips-cross libc6-mips64-mipsel-cross libc6-mips64el-cross libc6-mipsel-cross libc6-mipsn32-mips-cross libc6-mipsn32-mips64-cross libc6-mipsn32-mips64el-cross libc6-mipsn32-mipsel-cross
+
+# sudo apt-get install gcc-mipsel-linux-gnu g++-mipsel-linux-gnu \
+#     gcc-mips-linux-gnu g++-mips-linux-gnu \
+#     gcc-mips64el-linux-gnuabi64 g++-mips64el-linux-gnuabi64 \
+#     gcc-mips64-linux-gnuabi64 g++-mips64-linux-gnuabi64 \
+#     gcc-arm-linux-gnueabi g++-arm-linux-gnueabi libc6-dbg-armel-cross \
+#     gcc-arm-linux-gnueabihf g++-arm-linux-gnueabihf libc6-dbg-armhf-cross \
+#     gcc-aarch64-linux-gnu g++-aarch64-linux-gnu libc6-dbg-arm64-cross \
+#     gcc-hppa-linux-gnu g++-hppa-linux-gnu libc6-dbg-hppa-cross \
+#     gcc-hppa64-linux-gnu \
+#     gcc-m68k-linux-gnu g++-m68k-linux-gnu libc6-dbg-m68k-cross \
+#     gcc-powerpc-linux-gnu g++-powerpc-linux-gnu libc6-dbg-powerpc-cross \
+#     gcc-powerpc64-linux-gnu g++-powerpc64-linux-gnu libc6-dbg-ppc64-cross \
+#     gcc-powerpc64le-linux-gnu g++-powerpc64le-linux-gnu libc6-dbg-ppc64el-cross \
+#     gcc-s390x-linux-gnu g++-s390x-linux-gnu libc6-dbg-s390x-cross \
+#     gcc-sh4-linux-gnu g++-sh4-linux-gnu libc6-dbg-sh4-cross \
+#     gcc-sparc64-linux-gnu g++-sparc64-linux-gnu libc6-dbg-sparc64-cross \
+#     gcc-alpha-linux-gnu g++-alpha-linux-gnu libc6.1-dbg-alpha-cross \
+#     gcc-x86-64-linux-gnux32 g++-x86-64-linux-gnux32 libc6-dbg-x32-cross \
+#     gcc-i686-linux-gnu gcc-i686-linux-gnu libc6-dbg-i386-cross \
+#     gcc-riscv64-linux-gnu g++-riscv64-linux-gnu libc6-dbg-riscv64-cross 
+		
+
 #iot pwntools shellcode binutils
 sudo apt-get install binutils-mipsel-linux-gnu  binutils-mips-linux-gnu binutils-arm-linux-gnueabi
 #gcc

@@ -20,7 +20,7 @@
     #复制我写的一些pwn脚本到bin里
     chmod 777 ./bin/*
     cp ./bin/* ~/.local/bin/
-    ./06-setup_root_zsh.sh #让root也用上zsh（慎用，很多地址没有改成root的）
+    #./06-setup_root_zsh.sh #让root也用上zsh（慎用，很多地址没有改成root的）
 
 ## 一些问题
 * vmware的ubuntu网络有错误
