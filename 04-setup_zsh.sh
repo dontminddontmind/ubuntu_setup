@@ -14,7 +14,6 @@ fi
 
 # 设置为默认 Shell
 chsh -s /bin/zsh
-sudo chsh -s /bin/zsh root
 echo '输入exit继续安装'
 
 #安装powerlevel10k主题
