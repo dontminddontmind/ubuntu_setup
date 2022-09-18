@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if test ! -z $(uname -a|grep wsl);then
+if test ! -z "$(uname -a|grep WSL)" ;then
   echo "wsl不用装"
 else
 
