@@ -1,5 +1,6 @@
 #!/bin/bash
 
+sudo chsh -s /bin/zsh root
 if sudo [ -e /root/.zshrc ] 
 then
   echo "root link exist"
