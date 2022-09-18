@@ -10,7 +10,7 @@ cd ~/ubuntu_setup
 # 编辑etc/profile.d/proxy.sh文件，把代理地址、协议和端口改成你的
 ./01-setup_net.sh #配置网络，apt镜像源，代理
 cp ./.bashrc  ~/ #复制我的.bashrc配置
-#重启以让网络配置生效
+#重启以让网络配置生效，wsl不用重启，新开个terminal即可
 reboot
 proxy #开启代理 unproxy关闭
 ./02-setup_font.sh #安装zsh和lvim会用到的字体，wsl不用安
