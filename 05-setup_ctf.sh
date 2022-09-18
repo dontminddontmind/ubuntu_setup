@@ -1,7 +1,7 @@
 #!/bin/bash
 
 mkdir ~/tools
-git clone git@github.com:zardus/ctf-tools.git ~/tools/ctf-tools
+git clone https://github.com/zardus/ctf-tools.git ~/tools/ctf-tools
 
 sudo apt update
 sudo apt install build-essential libtool g++ gcc texinfo curl wget automake autoconf python3 python3-dev python2 python2-dev git subversion unzip lsb-release
@@ -10,7 +10,7 @@ sudo apt install build-essential libtool g++ gcc texinfo curl wget automake auto
 ~/tools/ctf-tools/bin/manage-tools setup
 source ~/.bashrc
 
-#pinyin
+#ctf-tools好多安装脚本运行报错，这里复制我改的脚本
 cp -r ./ctf-tools/* ~/tools/ctf-tools/
 # 运行32位程序
 sudo apt install gcc-multilib
@@ -25,7 +25,7 @@ sudo apt install gdb-multiarch
 cp ./.gdbinit ~/
 mkdir ~/tools/GdbPlugins
 git clone https://github.com/hugsy/gef ~/tools/GdbPlugins/gef
-git clone git://github.com/Mipu94/peda-heap.git ~/tools/GdbPlugins/peda-heap
+git clone https://github.com/Mipu94/peda-heap.git ~/tools/GdbPlugins/peda-heap
 git clone https://github.com/longld/peda ~/tools/GdbPlugins/peda
 git clone https://github.com/pwndbg/pwndbg ~/tools/GdbPlugins/pwndbg
 pushd ~/tools/GdbPlugins/pwndbg
