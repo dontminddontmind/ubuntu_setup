@@ -17,9 +17,12 @@ then
 sudo cp ./etc/apt/sources.list.d/ubt20* /etc/apt/sources.list.d/
 fi
 
-sudo cp ./etc/apt/sources.list.d/kernel.list /etc/apt/sources.list.d/
-sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 3B4FE6ACC0B21F32
-sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 40976EAF437D05B5
+# wsl装了内核也调不了
+if test -z "$(uname -a|grep WSL)" ;then
+	sudo cp ./etc/apt/sources.list.d/kernel.list /etc/apt/sources.list.d/
+	sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 3B4FE6ACC0B21F32
+	sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 40976EAF437D05B5
+fi
 
 sudo apt-get update
 sudo apt-get upgrade
