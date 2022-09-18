@@ -118,6 +118,7 @@ source /etc/profile.d/proxy.sh
 source /etc/profile.d/virtualenvwrapper.sh 
 easyproxy
 export PATH=$HOME/.local/bin:$PATH
+export PATH=$HOME/.cargo/bin:$PATH
 
 alias vim='lvim'
 # alias sudovim='sudo -E nvim'
