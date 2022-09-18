@@ -24,9 +24,10 @@
 
 ## 一些问题
 * vmware的ubuntu网络有错误
+```bash
     #试试重启一下
     sudo systemctl restart NetworkManager
-
+```
 ## 宿主机配置
 ### wsl宿主机
 

@@ -21,10 +21,10 @@ pip2 install --upgrade pip setuptools
 
 #添加版本 数字最高的最高优先级
 sudo rm /usr/bin/python
-sudo update-alternatives  --install /usr/bin/python python /usr/bin/python2.* 1
-sudo update-alternatives  --install /usr/bin/python python /usr/bin/python3.* 2
+sudo update-alternatives  --install /usr/bin/python python /usr/bin/python2 1
+sudo update-alternatives  --install /usr/bin/python python /usr/bin/python3 2
 
-sudo rm /usr/local/bin/pip /usr/bin/pip
+sudo rm /usr/local/bin/pip 
 sudo update-alternatives  --install /usr/local/bin/pip pip /usr/local/bin/pip2 1
 sudo update-alternatives  --install /usr/local/bin/pip pip /usr/bin/pip3 2
 #sudo update-alternatives  --install /usr/local/bin/pip pip /usr/local/lib/python3.8/dist-packages/pip 3
