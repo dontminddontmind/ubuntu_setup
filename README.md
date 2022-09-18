@@ -19,9 +19,8 @@
     ./04-setup_zsh.sh #配置ohmyzsh，会自动打开zsh，输入exit退出以继续安装，重启后zsh会变成默认shell
     cp ./.zshrc ./.p10k.zsh ~/ #复制我的zsh配置
     ./04-setup_lvim.sh #安装lunarvim，全部yes
-    lvim #先运行一下lvim，按<space>+q退出
     cp ./.config/lvim/* ~/.config/lvim/  #复制我的lvim配置
-    #lvim 进入后按<space>+p+u跟新一下包
+    #lvim 进入后输入<space>+L+c 重写一下配置文件，会自动下载插件
     ./05-setup_ctf.sh #配置pwn工具
     #复制我写的一些pwn脚本到bin里
     chmod 777 ./bin/*
