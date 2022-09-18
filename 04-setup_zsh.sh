@@ -11,7 +11,6 @@ else
 	exit 0
 fi
 
-echo '输入exit继续安装'
 # 设置为默认 Shell
 chsh -s /bin/zsh
 
