@@ -46,5 +46,35 @@ curl无法下载lunarvim的install.sh文件，连接被重置，开了代理也�
 bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh)
 ```
 ## 宿主机配置
-### wsl宿主机
+### wsl安装
+* 启用或关闭windows功能 ，打开子系统和虚拟平台，重启（开了虚拟平台就用不了vmware等虚拟机了）
+![image](https://user-images.githubusercontent.com/39674475/190902178-a5cf4246-1aa2-4914-a391-666b75299e84.png)
+* 升级wsl kernel，在此处下载 https://docs.microsoft.com/en-us/windows/wsl/wsl2-kernel
+#### 安装全新的wsl
+* 在Microsoft Store里选一个linux系统安装，如果是win10还要安装windows terminal
+* 在terminal里设置wsl2
+```bash
+wsl -l -v #列出wsl
+wsl --set-version  Ubuntu-20.04 2 #把Ubuntu-20.04换成你的wsl的名字
+wsl --set-default-version 2
+```
+#### 复制别人的wsl
+```bash
+#会装载很久，最好把能关的程序都关了，要不然会卡住不动
+wsl --shutdown #关闭所有wsl
+wsl --import wsl名 装载虚拟机的目录\wsl 压缩包的目录\ubuntu20.04.tar --version 2
+wsl -l -v #检查一下
+```
+这样安装的wsl默认用户会是root
+在虚拟机里打开/etc/wsl.conf文件，添加下面的内容改变默认用户
+```
+[user]
+default=username
+```
+### 安装zsh和lvim的字体
+下载字体，双击运行
+https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/Meslo/M/Regular/complete/Meslo%20LG%20M%20Regular%20Nerd%20Font%20Complete%20Mono.ttf
+### windows Terminal配置
+
+### vscode配置
 
