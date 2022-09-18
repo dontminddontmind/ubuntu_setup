@@ -6,20 +6,22 @@
     git clone https://github.com/dontminddontmind/ubuntu_setup ~/ubuntu_setup
     cd ~/ubuntu_setup
     #按照顺序依次执行setup文件
-    ./00-dot_write.sh #复制.zshrc .bashrc .p10k.zsh 配置文件
+    ./00-dot_write.sh #把配置文件里的用户名改成当前用户的
     # 编辑etc/profile.d/proxy.sh文件，把代理地址、协议和端口改成你的
     ./01-setup_net.sh #配置网络，apt镜像源，代理
+    cp ./.bashrc  ~/ #复制我的.bashrc配置
     #重启以让网络配置生效
     reboot
     proxy #开启代理 unproxy关闭
     ./02-setup_font.sh #安装zsh和lvim会用到的字体，wsl不用安
     ./03-setup_python.sh #安装python2和python3环境，用update-alternatives切换版本
     #关闭terminal再打开，初始化virtualenv环境
-    ./04-setup_zsh.sh #配置ohmyzsh，重启生效
-    ./04-setup_lvim.sh #配置lunarvim，全部yes
-    #复制我的lvim配置
-    cp ./.config/lvim/* ~/.config/lvim/
-    #lvim 进入后按<spave>+p+u跟新一下包
+    ./04-setup_zsh.sh #配置ohmyzsh，会自动打开zsh，输入exit退出以继续安装，重启后zsh会变成默认shell
+    cp ./.zshrc ./.p10k.zsh ~/ #复制我的zsh配置
+    ./04-setup_lvim.sh #安装lunarvim，全部yes
+    lvim #先运行一下lvim，按<space>+q退出
+    cp ./.config/lvim/* ~/.config/lvim/  #复制我的lvim配置
+    #lvim 进入后按<space>+p+u跟新一下包
     ./05-setup_ctf.sh #配置pwn工具
     #复制我写的一些pwn脚本到bin里
     chmod 777 ./bin/*
@@ -27,12 +29,14 @@
     #./06-setup_root_zsh.sh #让root也用上zsh（慎用，很多地址没有改成root的）
 ```
 ## 一些问题
-* vmware的ubuntu网络有错误
+### vmware的ubuntu网络有错误
 ```bash
     #试试重启一下
     sudo systemctl restart NetworkManager
 ```
-* curl: (35) OpenSSL SSL_connect: 连接被对方重设 in connection to raw.githubusercontent.com:443
+### 没有装上lvim 
+运行安装指令报错：
+`curl: (35) OpenSSL SSL_connect: 连接被对方重设 in connection to raw.githubusercontent.com:443`
 curl无法下载lunarvim的install.sh文件，连接被重置，开了代理也没用，可以更改hosts解决。
 在 www.ipaddress.com 查询 raw.githubusercontent.com 的真实地址，写入/etc/hosts。
 ```
