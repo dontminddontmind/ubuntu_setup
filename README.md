@@ -1,6 +1,7 @@
 # ubuntu_setup （CTF PWN 工作环境配置 wsl+ohmyzsh+lunnarvim+ctf-tools ）
 
 ## 安装
+```bash
     sudo apt install git
     git clone https://github.com/dontminddontmind/ubuntu_setup ~/ubuntu_setup
     cd ~/ubuntu_setup
@@ -13,6 +14,7 @@
     proxy #开启代理 unproxy关闭
     ./02-setup_font.sh #安装zsh和lvim会用到的字体，wsl不用安
     ./03-setup_python.sh #安装python2和python3环境，用update-alternatives切换版本
+    #关闭terminal再打开，创建virtualenv环境
     ./04-setup_zsh.sh #配置ohmyzsh
     cp -r ./.config/lvim ~/.config/ #复制我的lvim配置
     ./04-setup_lvim.sh #配置lunnarvim
@@ -21,7 +23,7 @@
     chmod 777 ./bin/*
     cp ./bin/* ~/.local/bin/
     #./06-setup_root_zsh.sh #让root也用上zsh（慎用，很多地址没有改成root的）
-
+```
 ## 一些问题
 * vmware的ubuntu网络有错误
 ```bash
