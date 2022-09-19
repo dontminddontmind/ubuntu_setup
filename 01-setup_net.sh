@@ -41,6 +41,9 @@ if test ! -z "$(uname -a|grep WSL)" ;then
 	fi
 	sudo rm /etc/resolv.conf
 	sudo echo 'nameserver 8.8.8.8' | sudo tee /etc/resolv.conf
+else
+	#TEST
+	sudo echo '185.199.108.133     raw.githubusercontent.com' | sudo tee --append /etc/hosts
 fi
 
 sudo apt install curl 
