@@ -7,6 +7,7 @@ rm nvim-linux64.deb*
 
 sudo apt install cargo
 #bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh)
+#TEST
 wget https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh
 ./install.sh -y
 rm ./install.sh
