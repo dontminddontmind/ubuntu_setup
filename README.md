@@ -1,12 +1,14 @@
 # ubuntu_setup （CTF PWN 工作环境配置 wsl+ohmyzsh+lunarvim+ctf-tools ）
 
 ## 安装
+使用局域网连接代理，运行之前先编辑etc/profile.d/proxy.sh把代理协议、端口、地址都改成你的。
 ```bash
 sudo apt install git
 git clone https://github.com/dontminddontmind/ubuntu_setup ~/ubuntu_setup
 cd ~/ubuntu_setup
 ./setup.sh
 ```
+
 ## 一些问题
 ### vmware的ubuntu网络有错误
 ```bash
