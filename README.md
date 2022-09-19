@@ -63,15 +63,25 @@ default=username
 重启一下windows terminal如果没有自动生成新wsl的配置，就自己添加一个吧
 ![image](https://user-images.githubusercontent.com/39674475/190948233-c0a4675f-584d-48a1-bd90-05edb58ff869.png)
 
+如果忘记了 Linux 分发版的密码：
+
+请打开 PowerShell，并使用以下命令进入默认 WSL 分发版的根目录：wsl -u root
+
+如果需要在非默认分发版中更新忘记的密码，请使用命令：wsl -d Debian -u root，并将 Debian 替换为目标分发版的名称。
+
+在 PowerShell 内的根级别打开 WSL 发行版后，可使用此命令更新密码：passwd <username>，其中 <username> 是发行版中帐户的用户名，而你忘记了它的密码。
+
+系统将提示你输入新的 UNIX 密码，然后确认该密码。 在被告知密码已成功更新后，请使用以下命令在 PowerShell 内关闭 WSL：exit。
+
 ### 安装zsh和lvim的字体
 下载字体，双击运行
 https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/Meslo/M/Regular/complete/Meslo%20LG%20M%20Regular%20Nerd%20Font%20Complete%20Mono.ttf
 ### windows Terminal配置
-设置字体
+* 设置字体
 ![image](https://user-images.githubusercontent.com/39674475/190944643-ab3b446f-5bb1-4c20-86ea-56fba6fc3689.png)
-用vim的话要把ctrl+v的键给删了（我已经删了）
+* 用vim的话要把ctrl+v的键给删了（我已经删了）
 ![image](https://user-images.githubusercontent.com/39674475/190947642-8b20523e-6bf1-448d-86dd-05a6c99ef0b6.png)
-vim在wsl中无法复制内容到宿主机，需要下载[win32yank](https://github.com/equalsraf/win32yank/releases/tag/v0.0.4)并添加到环境变量
+* vim在wsl中无法复制内容到宿主机，需要下载[win32yank](https://github.com/equalsraf/win32yank/releases/tag/v0.0.4)并添加到环境变量
 
 ### vscode连wsl
 安装插件
