@@ -6,7 +6,10 @@ sudo dpkg -i ./nvim-linux64.deb
 rm nvim-linux64.deb*
 
 sudo apt install cargo
-bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh)
+#bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh)
+wget https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh
+./install.sh -y
+rm ./install.sh
 
 #wsl https://www.lunarvim.org/01-installing.html#tips-for-wsl-2-users
 if test  ! -z "$(uname -a|grep WSL)" ;then
