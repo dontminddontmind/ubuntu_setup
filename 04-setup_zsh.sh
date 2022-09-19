@@ -4,8 +4,12 @@
 sudo apt install zsh
 
 # 安装 oh-my-zsh
+#TEST
 if [ ! -d "~/.oh-my-zsh" ]; then
-	sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+	#sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+	wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
+	sh install.sh --unattended --keep-zshrc
+	rm ./install.sh
 else
 	echo "已经有ohmyzsh了"
 	exit 0
