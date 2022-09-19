@@ -178,6 +178,7 @@ lvim.plugins = {
   --   cmd = "TroubleToggle",
   -- },
   -- { "is0n/jaq-nvim" },
+ -- https://github.com/michaelb/sniprun
   { 'michaelb/sniprun', run = 'bash ./install.sh'},
   {
   'phaazon/hop.nvim',
