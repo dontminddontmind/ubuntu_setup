@@ -24,12 +24,21 @@ echo -e '#!/bin/sh\nexec gdb -q -ex init-gef "$@"' > ./bin/gdb-gef
 echo -e '#!/bin/sh\nexec gdb -q -ex init-pedaheap "$@"' > ./bin/gdb-pedaheap
 
 # install pwntools, but don't let it sudo install dependencies
+sudo apt-get install python3 python3-pip python3-dev git libssl-dev libffi-dev build-essential
 git clone --depth=1 https://github.com/Gallopsled/pwntools.git ~/tools/pwntools
-pushd ~/tools/pwntools
+pushd ~/tools
 pip3 install --upgrade appdirs
-pip3 install --upgrade -e pwntools
+pip3 install --upgrade -e ./pwntools
 pip2 install --upgrade appdirs
-pip2 install --upgrade -e pwntools
+pip2 install --upgrade -e ./pwntools
+popd
+
+#LibcSearcher
+git clone https://github.com/lieanu/LibcSearcher.git ~/tools/LibcSearcher
+pushd ~/tools/LibcSearcher
+# workon ctf-tools3
+sudo python3 setup.py develop
+sudo python2 setup.py develop
 popd
 
 #qemu
@@ -104,10 +113,4 @@ sudo apt-get install binutils-mipsel-linux-gnu  binutils-mips-linux-gnu binutils
 #gcc
 sudo apt-get install  gcc-arm-linux-gnueabi gcc-mips-linux-gnu
 
-#LibcSearcher
-git clone https://github.com/lieanu/LibcSearcher.git ~/tools/LibcSearcher
-pushd ~/tools/LibcSearcher
-# workon ctf-tools3
-python3 setup.py develop
-python2 setup.py develop
-popd
+
