@@ -33,18 +33,7 @@ cp ./bin/* ~/.local/bin/
 #试试重启一下
 sudo systemctl restart NetworkManager
 ```
-### 没有装上lvim 
-运行安装指令报错：
-`curl: (35) OpenSSL SSL_connect: 连接被对方重设 in connection to raw.githubusercontent.com:443`
-curl无法下载lunarvim的install.sh文件，连接被重置，开了代理也没用，可以更改hosts解决。
-在 www.ipaddress.com 查询 raw.githubusercontent.com 的真实地址，写入/etc/hosts。
-```
-185.199.108.133     raw.githubusercontent.com
-```
-再运行 https://github.com/LunarVim/LunarVim 的指令重装
-```bash
-bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh)
-```
+
 ## 宿主机配置
 ### wsl安装
 * 启用或关闭windows功能 ，打开子系统和虚拟平台，重启（开了虚拟平台就用不了vmware等虚拟机了）
@@ -71,10 +60,30 @@ wsl -l -v #检查一下
 [user]
 default=username
 ```
+重启一下windows terminal如果没有自动生成新wsl的配置，就自己添加一个吧
+![image](https://user-images.githubusercontent.com/39674475/190948233-c0a4675f-584d-48a1-bd90-05edb58ff869.png)
+
 ### 安装zsh和lvim的字体
 下载字体，双击运行
 https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/Meslo/M/Regular/complete/Meslo%20LG%20M%20Regular%20Nerd%20Font%20Complete%20Mono.ttf
 ### windows Terminal配置
+设置字体
+![image](https://user-images.githubusercontent.com/39674475/190944643-ab3b446f-5bb1-4c20-86ea-56fba6fc3689.png)
+用vim的话要把ctrl+v的键给删了（我已经删了）
+![image](https://user-images.githubusercontent.com/39674475/190947642-8b20523e-6bf1-448d-86dd-05a6c99ef0b6.png)
+vim在wsl中无法复制内容到宿主机，需要下载[win32yank](https://github.com/equalsraf/win32yank/releases/tag/v0.0.4)并添加到环境变量
 
-### vscode配置
+### vscode连wsl
+安装插件
+![image](https://user-images.githubusercontent.com/39674475/190944140-032d166b-77d6-4364-b5f3-50dd82ac85ac.png)
+就可以选择连接wsl了
+![image](https://user-images.githubusercontent.com/39674475/190944195-73ab81b7-61d3-4673-94a8-53c87335250d.png)
+给vscode的终端设置字体
+ctrl+逗号或者点左下角的齿轮打开设置，输入font,点击功能-终端，找到如下位置，输入MesloLGM Nerd Font Mono字体即可。所作修改会在终端中即时显示。
+![image](https://user-images.githubusercontent.com/39674475/190944726-860f8536-f8bf-4d4c-a374-372d209209cb.png)
+如果没有自动识别wsl终端里的virtualenv，也就是pwntools等识别不到，输入ctrl+shift+p，搜索python interpreter或者python解释器，换成ctftools的python环境
+![image](https://user-images.githubusercontent.com/39674475/190947490-8b37f1fc-dac8-427d-839f-4f71ffe8370c.png)
+![image](https://user-images.githubusercontent.com/39674475/190947511-bd9321ac-387e-4362-ac34-c750cf173695.png)
+
+
 
