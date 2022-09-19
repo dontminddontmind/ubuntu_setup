@@ -21,11 +21,12 @@ lvim.leader = "space"
 lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 lvim.keys.normal_mode["<S-l>"] = ":BufferLineCycleNext<CR>"
 lvim.keys.normal_mode["<S-h>"] = ":BufferLineCyclePrev<CR>"
+vim.keymap.set('n', '<C-j>', [[<C-W>w]])
 vim.keymap.set('t', '<esc>', [[<C-\><C-n>]])
 vim.keymap.set('t', '<C-j>', [[<C-\><C-n><C-W>w]])
 -- motion
-vim.keymap.set("n",";",":HopWord<cr>",opts)
-vim.keymap.set("n","'",":HopLineStart<cr>",opts)
+vim.keymap.set("n", ";", ":HopWord<cr>")
+vim.keymap.set("n", "'", ":HopLineStart<cr>")
 -- unmap a default keymapping
 -- vim.keymap.del("n", "<C-Up>")
 -- override a default keymapping
@@ -62,7 +63,9 @@ vim.keymap.set("n","'",":HopLineStart<cr>",opts)
 -- }
 lvim.builtin.which_key.mappings["r"] = {
   name = "+run",
-  r = { "<cmd>SnipRun<cr>", "runcode" },
+  r = { "<cmd>Jaq<cr>", "runcode" },
+  d = { "<cmd>ToggleTerm<CR>gdbattach<CR>", "debug" },
+  -- r = { "<cmd>SnipRun<cr>", "runcode" },
   a = { "<cmd>term ida64.exe ./main<cr><cmd>Bdelete!<CR>", "ida64" },
   A = { "<cmd>term ida.exe ./main<cr><cmd>Bdelete!<CR>", "ida32" },
 }
@@ -179,18 +182,18 @@ lvim.plugins = {
   --   "folke/trouble.nvim",
   --   cmd = "TroubleToggle",
   -- },
-  -- { "is0n/jaq-nvim" },
- -- https://github.com/michaelb/sniprun
-  { 'michaelb/sniprun', run = 'bash ./install.sh'},
+  -- https://github.com/is0n/jaq-nvim
+  { "is0n/jaq-nvim" },
+  -- https://github.com/michaelb/sniprun
+  -- { 'michaelb/sniprun', run = 'bash ./install.sh' },
   {
-  'phaazon/hop.nvim',
-  branch = 'v1', -- optional but strongly recommended
-  config = function()
-    -- you can configure Hop the way you like here; see :h hop-config
-    -- require'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
-    require'hop'.setup { keys = 'asdfghjklzxcvbnmqwertyuiop' }
-   
-  end
+    'phaazon/hop.nvim',
+    branch = 'v1', -- optional but strongly recommended
+    -- config = function()
+    --   -- you can configure Hop the way you like here; see :h hop-config
+    --   -- require'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
+
+    -- end
   },
   -- {
   -- 'phaazon/hop.nvim',
@@ -220,7 +223,7 @@ lvim.plugins = {
 if vim.fn.has "wsl" == 1 then
   vim.g.clipboard = {
     copy = {
-      ["+"] = "win32yank.exe -i --crlf", 
+      ["+"] = "win32yank.exe -i --crlf",
       ["*"] = "win32yank.exe -i --crlf",
     },
     paste = {
@@ -230,64 +233,138 @@ if vim.fn.has "wsl" == 1 then
   }
 end
 
-require'sniprun'.setup({
-  selected_interpreters = {},     --# use those instead of the default for the current filetype
-  repl_enable = {},               --# enable REPL-like behavior for the given interpreters
-  repl_disable = {},              --# disable REPL-like behavior for the given interpreters
+require 'hop'.setup { keys = 'asdfghjklzxcvbnmqwertyuiop' }
 
-  interpreter_options = {         --# interpreter-specific options, see docs / :SnipInfo <name>
+-- require 'sniprun'.setup({
+--   selected_interpreters = {}, --# use those instead of the default for the current filetype
+--   repl_enable = {}, --# enable REPL-like behavior for the given interpreters
+--   repl_disable = {}, --# disable REPL-like behavior for the given interpreters
 
-    --# use the interpreter name as key
-    GFM_original = {
-      use_on_filetypes = {"markdown.pandoc"}    --# the 'use_on_filetypes' configuration key is
-                                                --# available for every interpreter
+--   interpreter_options = { --# interpreter-specific options, see docs / :SnipInfo <name>
+
+--     --# use the interpreter name as key
+--     GFM_original = {
+--       use_on_filetypes = { "markdown.pandoc" } --# the 'use_on_filetypes' configuration key is
+--       --# available for every interpreter
+--     },
+--     Python3_original = {
+--       error_truncate = "auto" --# Truncate runtime errors 'long', 'short' or 'auto'
+--       --# the hint is available for every interpreter
+--       --# but may not be always respected
+--     }
+--   },
+
+--   --# you can combo different display modes as desired
+--   display = {
+--     "Classic", --# display results in the command-line  area
+--     "VirtualTextOk", --# display ok results as virtual text (multiline is shortened)
+
+--     -- "VirtualTextErr",          --# display error results as virtual text
+--     -- "TempFloatingWindow",      --# display results in a floating window
+--     -- "LongTempFloatingWindow",  --# same as above, but only long results. To use with VirtualText__
+--     -- "Terminal",                --# display results in a vertical split
+--     -- "TerminalWithCode",        --# display results and code history in a vertical split
+--     -- "NvimNotify",              --# display with the nvim-notify plugin
+--     -- "Api"                      --# return output to a programming interface
+--   },
+
+--   display_options = {
+--     terminal_width = 45, --# change the terminal display option width
+--     notification_timeout = 5 --# timeout for nvim_notify output
+--   },
+
+--   --# You can use the same keys to customize whether a sniprun producing
+--   --# no output should display nothing or '(no output)'
+--   show_no_output = {
+--     "Classic",
+--     "TempFloatingWindow", --# implies LongTempFloatingWindow, which has no effect on its own
+--   },
+
+--   --# customize highlight groups (setting this overrides colorscheme)
+--   snipruncolors = {
+--     SniprunVirtualTextOk  = { bg = "#66eeff", fg = "#000000", ctermbg = "Cyan", cterfg = "Black" },
+--     SniprunFloatingWinOk  = { fg = "#66eeff", ctermfg = "Cyan" },
+--     SniprunVirtualTextErr = { bg = "#881515", fg = "#000000", ctermbg = "DarkRed", cterfg = "Black" },
+--     SniprunFloatingWinErr = { fg = "#881515", ctermfg = "DarkRed" },
+--   },
+
+--   --# miscellaneous compatibility/adjustement settings
+--   inline_messages = 0, --# inline_message (0/1) is a one-line way to display messages
+--   --# to workaround sniprun not being able to display anything
+
+--   borders = 'single', --# display borders around floating windows
+--   --# possible values are 'none', 'single', 'double', or 'shadow'
+--   live_mode_toggle = 'off' --# live mode toggle, see Usage - Running for more info
+-- })
+
+require('jaq-nvim').setup {
+  cmds = {
+    -- Uses vim commands
+    internal = {
+      lua = "luafile %",
+      vim = "source %"
     },
-    Python3_original = {
-        error_truncate = "auto"         --# Truncate runtime errors 'long', 'short' or 'auto'
-                                        --# the hint is available for every interpreter
-                                        --# but may not be always respected
+
+    -- Uses shell commands
+    external = {
+      markdown = "glow %",
+      python   = "python %",
+      go       = "go run %",
+      sh       = "sh %"
     }
-  },      
-
-  --# you can combo different display modes as desired
-  display = {
-    "Classic",                    --# display results in the command-line  area
-    "VirtualTextOk",              --# display ok results as virtual text (multiline is shortened)
-
-    -- "VirtualTextErr",          --# display error results as virtual text
-    -- "TempFloatingWindow",      --# display results in a floating window
-    -- "LongTempFloatingWindow",  --# same as above, but only long results. To use with VirtualText__
-    -- "Terminal",                --# display results in a vertical split
-    -- "TerminalWithCode",        --# display results and code history in a vertical split
-    -- "NvimNotify",              --# display with the nvim-notify plugin
-    -- "Api"                      --# return output to a programming interface
   },
 
-  display_options = {
-    terminal_width = 45,       --# change the terminal display option width
-    notification_timeout = 5   --# timeout for nvim_notify output
+  behavior = {
+    -- Default type
+    default = "terminal",
+
+    -- Start in insert mode
+    startinsert = false,
+
+    -- Use `wincmd p` on startup
+    wincmd = false,
+
+    -- Auto-save files
+    autosave = true
   },
 
-  --# You can use the same keys to customize whether a sniprun producing
-  --# no output should display nothing or '(no output)'
-  show_no_output = {
-    "Classic",
-    "TempFloatingWindow",      --# implies LongTempFloatingWindow, which has no effect on its own
-  },
+  ui = {
+    float = {
+      -- See ':h nvim_open_win'
+      border = "none",
 
-  --# customize highlight groups (setting this overrides colorscheme)
-  snipruncolors = {
-    SniprunVirtualTextOk   =  {bg="#66eeff",fg="#000000",ctermbg="Cyan",cterfg="Black"},
-    SniprunFloatingWinOk   =  {fg="#66eeff",ctermfg="Cyan"},
-    SniprunVirtualTextErr  =  {bg="#881515",fg="#000000",ctermbg="DarkRed",cterfg="Black"},
-    SniprunFloatingWinErr  =  {fg="#881515",ctermfg="DarkRed"},
-  },
+      -- See ':h winhl'
+      winhl    = "Normal",
+      borderhl = "FloatBorder",
 
-  --# miscellaneous compatibility/adjustement settings
-  inline_messages = 0,             --# inline_message (0/1) is a one-line way to display messages
-				   --# to workaround sniprun not being able to display anything
+      -- See ':h winblend'
+      winblend = 0,
 
-  borders = 'single',              --# display borders around floating windows
-                                   --# possible values are 'none', 'single', 'double', or 'shadow'
-  live_mode_toggle='off'       --# live mode toggle, see Usage - Running for more info   
-})
+      -- Num from `0-1` for measurements
+      height = 0.8,
+      width  = 0.8,
+      x      = 0.5,
+      y      = 0.5
+    },
+
+    terminal = {
+      -- Window position
+      -- position = "bot",
+      position = 'bot',
+
+      -- Window size
+      size = 10,
+
+      -- Disable line numbers
+      line_no = false
+    },
+
+    quickfix = {
+      -- Window position
+      position = "bot",
+
+      -- Window size
+      size = 10
+    }
+  }
+}
