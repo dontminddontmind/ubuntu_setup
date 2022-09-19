@@ -8,6 +8,9 @@ rm nvim-linux64.deb*
 sudo apt install cargo
 #bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh)
 #TEST
+shopt -s expand_aliases # Enable (set) opt_name.
+source /etc/profile.d/proxy.sh
+proxy
 wget https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh
 chmod 777 ./install.sh
 ./install.sh -y
