@@ -61,6 +61,7 @@ vim.keymap.set("n", "'", ":HopLineStart<cr>")
 --   l = { "<cmd>Trouble loclist<cr>", "LocationList" },
 --   w = { "<cmd>Trouble workspace_diagnostics<cr>", "Workspace Diagnostics" },
 -- }
+-- lvim.builtin.which_key.mappings["x"] = { "<cmd>Bdelete<CR>", "Close Buffer" }
 lvim.builtin.which_key.mappings["r"] = {
   name = "+run",
   r = { "<cmd>Jaq<cr>", "runcode" },
