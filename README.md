@@ -9,7 +9,8 @@ cd ~/ubuntu_setup
 ./setup.sh
 #重启让配置生效
 ```
-### 非wsl安装注意事项
+试了ubuntu22.04可以运行
+## vmware安装配置
 非wsl需要配置一下terminal的字体，在terminal里右键preference里切换字体：
 Preferences-> Unnamed-> Text -> Check Custom font -> 换成Meslo
 也可以运行`getnf`下载更多字体
