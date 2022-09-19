@@ -7,16 +7,24 @@ sudo apt install git
 git clone https://github.com/dontminddontmind/ubuntu_setup ~/ubuntu_setup
 cd ~/ubuntu_setup
 ./setup.sh
+#重启让配置生效
 ```
-
-## 一些问题
-### vmware的ubuntu网络有错误
+### 非wsl安装注意事项
+非wsl需要配置一下terminal的字体，在terminal里右键preference里切换字体：
+Preferences-> Unnamed-> Text -> Check Custom font -> 换成Meslo
+也可以运行`getnf`下载更多字体
+运行`gnome-tweaks` 
+可以将capslock映射到esc :
+在“Keyboard & Mouse”设置中，点击“Additional Layout Options”；在“Caps Lock behavior”列表中选择“Caps Lock an additionnal Esc”。
+还可以更改字体大小:
+Fonts -> Scaling Factor
+如果 vmware的ubuntu网络有错误：
 ```bash
 #试试重启一下
 sudo systemctl restart NetworkManager
 ```
 
-## 宿主机配置
+## wsl安装配置
 ### wsl安装
 * 启用或关闭windows功能 ，打开子系统和虚拟平台，重启（开了虚拟平台就用不了vmware等虚拟机了）
 ![image](https://user-images.githubusercontent.com/39674475/190902178-a5cf4246-1aa2-4914-a391-666b75299e84.png)
