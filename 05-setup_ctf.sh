@@ -4,7 +4,7 @@ mkdir ~/tools
 git clone https://github.com/zardus/ctf-tools.git ~/tools/ctf-tools
 
 sudo apt update
-sudo apt -y --force-yes install build-essential libtool g++ gcc texinfo curl wget automake autoconf python3 python3-dev python2 python2-dev git subversion unzip lsb-release
+sudo apt install build-essential libtool g++ gcc texinfo curl wget automake autoconf python3 python3-dev python2 python2-dev git subversion unzip lsb-release
 #pinyin 安装python的时候会同时安装
 #pip install virtualenvwrapper 
 ~/tools/ctf-tools/bin/manage-tools setup
