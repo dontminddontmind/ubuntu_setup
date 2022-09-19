@@ -12,14 +12,23 @@ cd ~/ubuntu_setup
 试了ubuntu22.04可以运行
 ## vmware安装配置
 非wsl需要配置一下terminal的字体，在terminal里右键preference里切换字体：
+
 Preferences-> Unnamed-> Text -> Check Custom font -> 换成Meslo
+
 也可以运行`getnf`下载更多字体
+
 运行`gnome-tweaks` 
+
 可以将capslock映射到esc :
+
 在“Keyboard & Mouse”设置中，点击“Additional Layout Options”；在“Caps Lock behavior”列表中选择“Caps Lock an additionnal Esc”。
+
 还可以更改字体大小:
+
 Fonts -> Scaling Factor
+
 如果 vmware的ubuntu网络有错误：
+
 ```bash
 #试试重启一下
 sudo systemctl restart NetworkManager
