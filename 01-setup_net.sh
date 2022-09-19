@@ -53,7 +53,7 @@ sudo apt install curl
 
 sudo apt install npm
 #npm换国内源
-npm config set registry https://registry.npm.taobao.org
+#npm config set registry https://registry.npm.taobao.org
 
 sudo apt install docker
 #docker换源
