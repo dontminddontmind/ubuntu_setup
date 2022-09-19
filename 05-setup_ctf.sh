@@ -13,7 +13,7 @@ source ~/.bashrc
 #ctf-tools好多安装脚本运行报错，这里复制我改的脚本
 cp -r ./ctf-tools/* ~/tools/ctf-tools/
 # 运行32位程序
-sudo apt -y --force-yes install gcc-multilib
+sudo apt install gcc-multilib
 
 # install gdb, allowing it to try to sudo install dependencies
 #manage-tools -s install gdb
