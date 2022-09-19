@@ -1,4 +1,4 @@
-# ubuntu_setup （CTF PWN 工作环境配置 wsl+ohmyzsh+lunarvim+ctf-tools ）
+# ubuntu_setup （CTF PWN 工作环境配置 wsl+ohmyzsh+lunarvim+pwn工具 ）
 
 ## 安装
 使用局域网连接代理，运行之前先编辑etc/profile.d/proxy.sh把代理协议、端口、地址都改成你的。
