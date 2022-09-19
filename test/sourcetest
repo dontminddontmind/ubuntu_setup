@@ -1,0 +1,2 @@
+export HELOO="helllllooooooooooo"
+alias hello="echo $HELLO"
