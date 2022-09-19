@@ -33,7 +33,7 @@ else
   echo "在“Keyboard & Mouse”设置中，点击“Additional Layout Options”；在“Caps Lock behavior”列表中选择“Caps Lock an additionnal Esc”。"
   echo "更改字体大小:"
   echo "Fonts -> Scaling Factor"
-  gnome-tweaks
+  #gnome-tweaks
 
   #pinyin
   # sudo apt install language-pack-zh-hans
