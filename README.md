@@ -6,7 +6,6 @@ sudo apt install git
 git clone https://github.com/dontminddontmind/ubuntu_setup ~/ubuntu_setup
 cd ~/ubuntu_setup
 #按照顺序依次执行setup文件
-./00-dot_write.sh #把配置文件里的用户名改成当前用户的
 # 编辑etc/profile.d/proxy.sh文件，把代理地址、协议和端口改成你的
 ./01-setup_net.sh #配置网络，apt镜像源，代理
 cp ./.bashrc  ~/ #复制我的.bashrc配置
@@ -21,7 +20,7 @@ cp ./.zshrc ./.p10k.zsh ~/ #复制我的zsh配置
 ./04-setup_lvim.sh #安装lunarvim，全部yes
 cp ./.config/lvim/* ~/.config/lvim/  #复制我的lvim配置
 #lvim 进入后输入<space>+L+c 重写一下配置文件，会自动下载插件
-./05-setup_ctf.sh #配置pwn工具
+./05-setup_pwn.sh #配置pwn工具
 #复制我写的一些pwn脚本到bin里
 chmod 777 ./bin/*
 cp ./bin/* ~/.local/bin/

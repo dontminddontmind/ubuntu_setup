@@ -122,5 +122,4 @@ export PATH=$HOME/.cargo/bin:$PATH
 
 alias vim='lvim'
 # alias sudovim='sudo -E nvim'
-# ctf-tools: PATH setup
-export PATH=/home/ubt22/tools/ctf-tools/bin:$PATH
+
