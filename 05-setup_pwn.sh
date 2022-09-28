@@ -113,18 +113,24 @@ sudo apt-get install binutils-mipsel-linux-gnu  binutils-mips-linux-gnu binutils
 #gcc
 sudo apt-get install  gcc-arm-linux-gnueabi gcc-mips-linux-gnu
 
-# https://ithelp.ithome.com.tw/questions/10200138
-# docker: unrecognized service 錯誤
+
+# ubuntu22 wsl2 docker
+# https://crapts.org/2022/05/15/install-docker-in-wsl2-with-ubuntu-22-04-lts/
+# reinstall docker
+# https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository
+# Manage Docker as a non-root user
+# https://docs.docker.com/engine/install/linux-postinstall/
 if test -z "$(uname -a|grep WSL)" ;then
 	echo 'windows下安装Docker Desktop for windows'
 # 	shopt -s expand_aliases # Enable (set) opt_name.
 # 	source /etc/profile.d/proxy.sh
 # 	proxy
-	
-# 	curl -fsSL https://get.docker.com -o get-docker.sh
-# 	sudo sh get-docker.sh
-# 	sudo service docker start
-# 	rm ./get-docker.sh
+
+# 	echo '输入1回车'
+# 	 sudo update-alternatives --config ip6tables 
+# 	echo '输入1回车'
+# 	 sudo update-alternatives --config iptables 
+	 
 else
 	sudo apt install docker
 fi
