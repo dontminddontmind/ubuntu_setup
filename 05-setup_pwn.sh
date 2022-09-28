@@ -116,15 +116,15 @@ sudo apt-get install  gcc-arm-linux-gnueabi gcc-mips-linux-gnu
 # https://ithelp.ithome.com.tw/questions/10200138
 # docker: unrecognized service 錯誤
 if test -z "$(uname -a|grep WSL)" ;then
-
-	shopt -s expand_aliases # Enable (set) opt_name.
-	source /etc/profile.d/proxy.sh
-	proxy
+	echo 'windows下安装Docker Desktop for windows'
+# 	shopt -s expand_aliases # Enable (set) opt_name.
+# 	source /etc/profile.d/proxy.sh
+# 	proxy
 	
-	curl -fsSL https://get.docker.com -o get-docker.sh
-	sudo sh get-docker.sh
-	sudo service docker start
-	rm ./get-docker.sh
+# 	curl -fsSL https://get.docker.com -o get-docker.sh
+# 	sudo sh get-docker.sh
+# 	sudo service docker start
+# 	rm ./get-docker.sh
 else
 	sudo apt install docker
 fi
