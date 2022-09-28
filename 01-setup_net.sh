@@ -55,6 +55,15 @@ sudo apt install npm
 #npm换国内源
 #npm config set registry https://registry.npm.taobao.org
 
-sudo apt install docker
+# https://ithelp.ithome.com.tw/questions/10200138
+# docker: unrecognized service 錯誤
+if test -z "$(uname -a|grep WSL)" ;then
+	curl -fsSL https://get.docker.com -o get-docker.sh
+	sudo sh get-docker.sh
+	sudo service docker start
+	rm ./get-docker.sh
+else
+	sudo apt install docker
+fi
 #docker换源
 
