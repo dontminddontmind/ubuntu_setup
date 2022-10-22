@@ -69,13 +69,15 @@ lvim.builtin.which_key.mappings["r"] = {
   -- r = { "<cmd>SnipRun<cr>", "runcode" },
   a = { "<cmd>term ida64.exe ./main<cr><cmd>Bdelete!<CR>", "ida64" },
   A = { "<cmd>term ida.exe ./main<cr><cmd>Bdelete!<CR>", "ida32" },
+  g = { "<cmd>Glow<cr>", "markdown" },
+  m = { "<cmd>MarkdownPreview<cr>", "markdown browser" },
+  M = { "<cmd>MarkdownPreviewStop<cr>", "markdown browser stop" },
 }
 
 -- TODO: User Config for predefined plugins
 -- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
 lvim.builtin.alpha.active = true
 lvim.builtin.alpha.mode = "dashboard"
-lvim.builtin.notify.active = true
 lvim.builtin.terminal.active = true
 lvim.builtin.nvimtree.setup.view.side = "left"
 lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
@@ -190,10 +192,10 @@ lvim.plugins = {
     --  vim.o.timeoutlen = 500
     -- end
   },
+  -- code run
   -- https://github.com/is0n/jaq-nvim
   { "is0n/jaq-nvim" },
-  -- https://github.com/michaelb/sniprun
-  -- { 'michaelb/sniprun', run = 'bash ./install.sh' },
+  -- easy motion
   {
     'phaazon/hop.nvim',
     branch = 'v1', -- optional but strongly recommended
@@ -203,15 +205,12 @@ lvim.plugins = {
 
     -- end
   },
-  -- {
-  -- 'phaazon/hop.nvim',
-  -- branch = 'v1', -- optional but strongly recommended
-  -- config = function()
-  --   -- you can configure Hop the way you like here; see :h hop-config
-  --   -- require'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
-  --   require'hop'.setup { keys = 'asdfghjklzxcvbnmqwertyuiop' }
-  -- end
-  -- },
+  --markdown
+  { "ellisonleao/glow.nvim" },
+  {
+    "iamcco/markdown-preview.nvim",
+    run = function() vim.fn["mkdp#util#install"]() end,
+  },
 }
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
