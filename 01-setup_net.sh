@@ -41,10 +41,11 @@ if test ! -z "$(uname -a|grep WSL)" ;then
 	fi
 	sudo rm /etc/resolv.conf
 	sudo echo 'nameserver 8.8.8.8' | sudo tee /etc/resolv.conf
-else
-	#TEST
-	sudo echo '185.199.108.133     raw.githubusercontent.com' | sudo tee --append /etc/hosts
+
 fi
+
+sudo echo '140.82.114.3	github.com' | sudo tee --append /etc/hosts
+sudo echo '185.199.108.133     raw.githubusercontent.com' | sudo tee --append /etc/hosts
 
 sudo apt install curl 
 # shell不能识别alias https://blog.csdn.net/qq_33709508/article/details/101822329
