@@ -5,7 +5,10 @@ curl -s https://api.github.com/repos/neovim/neovim/releases/latest | grep browse
 sudo dpkg -i ./nvim-linux64.deb
 rm nvim-linux64.deb*
 
-sudo apt install cargo
+# 从官网下载rust，包管理器太老
+# sudo apt install cargo
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
 #bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh)
 #TEST
 shopt -s expand_aliases # Enable (set) opt_name.
