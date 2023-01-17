@@ -41,6 +41,9 @@ if test ! -z "$(uname -a|grep WSL)" ;then
 	fi
 	sudo rm /etc/resolv.conf
 	sudo echo 'nameserver 8.8.8.8' | sudo tee /etc/resolv.conf
+	
+	# 运行这个可以让resolv.conf不被删掉？
+	sudo chattr +i /etc/resolv.conf
 
 fi
 
