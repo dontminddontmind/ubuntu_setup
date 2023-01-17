@@ -73,6 +73,7 @@ lvim.builtin.which_key.mappings["r"] = {
   m = { "<cmd>MarkdownPreview<cr>", "markdown browser" },
   M = { "<cmd>MarkdownPreviewStop<cr>", "markdown browser stop" },
 }
+vim.o.timeoutlen = 100 -- which-key is so slow
 
 -- TODO: User Config for predefined plugins
 -- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
