@@ -9,6 +9,8 @@ rm nvim-linux64.deb*
 # sudo apt install cargo
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
+# TODO：重新下载安装最新的nodejs npm
+
 #bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh)
 #TEST
 shopt -s expand_aliases # Enable (set) opt_name.
