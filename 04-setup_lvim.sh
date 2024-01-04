@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# 安装最新版neovim （已过期）
 curl -s https://api.github.com/repos/neovim/neovim/releases/latest | grep browser_download_url | grep nvim-linux64.deb |cut -d'"' -f4 | xargs wget
 # sudo apt install ./nvim-linux64.deb
 sudo dpkg -i ./nvim-linux64.deb
@@ -14,8 +15,8 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
 nvm install --lts
 nvm use --lts
 
-#bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh)
-#TEST
+# 安装最新版lunarvim （已过期）
+# LV_BRANCH='release-1.3/neovim-0.9' bash <(curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/release-1.3/neovim-0.9/utils/installer/install.sh)
 shopt -s expand_aliases # Enable (set) opt_name.
 source /etc/profile.d/proxy.sh
 proxy
